@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <iframe src="layout.html" style="width: 100%; height: 90px; border: none;"></iframe>
+    <h1>Formulir Contoh</h1>
+    
+    <form id="example-form" method="POST" action="/submit">
+        <div class="form-group">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+        </div>
+
+    <form id="example-form">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan Email Anda"  required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Kata Sandi:</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan kata sandi Anda" minlength="5" maxlength="20" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hobbies">Hobi:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobbies" value="Gaming"> Gaming</label>
+                <label><input type="checkbox" name="hobbies" value="Olahraga"> Olahraga</label>
+                <label><input type="checkbox" name="hobbies" value="Coding"> Coding</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Laki-laki</option>
+                <option value="female">Perempuan</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Kirim</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+</html>
