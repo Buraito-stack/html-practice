@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Diskon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    .calculator {
+      max-width: 400px;
+      background: white;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .calculator h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .calculator label {
+      font-size: 1rem;
+      margin-top: 10px;
+      display: block;
+      text-align: left;
+    }
+
+    .calculator input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .calculator button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .calculator button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .result span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="layout.html" style="width: 100%; height: 110x; border: none;"></iframe>
+  <div class="calculator">
+    <h1>Kalkulator Diskon</h1>
+    <label for="price">Harga Asli (Rp)</label>
+    <input type="number" id="price" placeholder="Masukkan harga asli">
+
+    <label for="discount">Diskon (%)</label>
+    <input type="number" id="discount" placeholder="Masukkan persen diskon">
+
+    <button onclick="calculateDiscount()">Hitung</button>
+
+    <div class="result" id="result">
+
+    </div>
+  </div>
+
+  <script>
+    function calculateDiscount() {
+      const price = parseFloat(document.getElementById('price').value);
+      const discount = parseFloat(document.getElementById('discount').value);
+
+      if (isNaN(price) || isNaN(discount) || price <= 0 || discount < 0 || discount > 100) {
+        document.getElementById('result').innerHTML = "Masukkan nilai yang valid!";
+        return;
+      }
+
+      const discountAmount = (price * discount) / 100;
+      const finalPrice = price - discountAmount;
+
+      document.getElementById('result').innerHTML = `
+        Harga Setelah Diskon: <span>Rp ${finalPrice.toFixed(2)}</span> 
+        (Diskon: Rp ${discountAmount.toFixed(2)})
+      `;
+    }
+  </script>
+</body>
+</html>
