@@ -5,55 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 1.5rem;
+            font-family: Arial, sans-serif;
         }
         nav {
             background-color: #f8f9fa;
-            padding: 10px 20px;
             border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
         }
-        nav ul li {
-            display: inline;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        nav ul li a {
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin: 0 10px;
+        }
+        .navbar ul li a {
             text-decoration: none;
             color: #007bff;
             font-weight: bold;
+            transition: color 0.3s;
         }
-        nav ul li a:hover {
-            text-decoration: underline;
+        .navbar ul li a:hover {
+            color: #0056b3;
         }
-        main {
-            padding: 20px;
-            flex: 1;
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .mobile-nav ul {
+            flex-direction: column;
+        }
+        .mobile-nav ul li {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .mobile-nav {
+                display: none;
+            }
+            .mobile-nav.active {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        Navigasi Utama
-    </header>
     <nav>
-        <ul>
-            <li><a href="index.html" target="_parent">Beranda</a></li>
-            <li><a href="Schedule table.html" target="_parent">Jadwal</a></li>
-            <li><a href="Format.html" target="_parent">Format</a></li>
-            <li><a href="hyperlink.html" target="_parent">Hyperlink</a></li>
-            <li><a href="Formulir.html" target="_parent">Formulir</a></li>
-            <li><a href="css.html" target="_parent">Grid-test</a></li>
-            <li><a href="Kalkulator.html" target="_parent">Kalkulator</a></li>
-        </ul>
+        <div class="navbar">
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="index.html" target="_parent">Beranda</a></li>
+                <li><a href="Schedule table.html" target="_parent">Jadwal</a></li>
+                <li><a href="Format.html" target="_parent">Format</a></li>
+                <li><a href="hyperlink.html" target="_parent">Hyperlink</a></li>
+                <li><a href="Formulir.html" target="_parent">Formulir</a></li>
+                <li><a href="css.html" target="_parent">Grid-test</a></li>
+                <li><a href="Kalkulator.html" target="_parent">Kalkulator</a></li>
+            </ul>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul>
+                <li><a href="index.html" target="_parent">Beranda</a></li>
+                <li><a href="Schedule table.html" target="_parent">Jadwal</a></li>
+                <li><a href="Format.html" target="_parent">Format</a></li>
+                <li><a href="hyperlink.html" target="_parent">Hyperlink</a></li>
+                <li><a href="Formulir.html" target="_parent">Formulir</a></li>
+                <li><a href="css.html" target="_parent">Grid-test</a></li>
+                <li><a href="Kalkulator.html" target="_parent">Kalkulator</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
