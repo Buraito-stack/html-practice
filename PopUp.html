@@ -76,12 +76,12 @@
   </style>
 </head>
 <body>
-  <iframe src="layout.html" style="width: 100%; height: 110x; border: none;"></iframe>
+  <iframe src="layout.html" style="width: 100%; height: 110px; border: none;"></iframe>
   <button class="open-modal-btn">Testing button, DON'T CLICK IT!!</button>
 
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal">
-      <iframe id="rickrollVideo" src="" allow="autoplay" allowfullscreen></iframe>
+      <iframe id="videoPlayer" src="" allow="autoplay" allowfullscreen></iframe>
       <button id="closeModalBtn">Close</button>
     </div>
   </div>
@@ -90,25 +90,24 @@
     const openModalBtn = document.querySelector('.open-modal-btn');
     const modalOverlay = document.getElementById('modalOverlay');
     const closeModalBtn = document.getElementById('closeModalBtn');
-    const rickrollVideo = document.getElementById('rickrollVideo');
+    const videoPlayer = document.getElementById('videoPlayer'); // Ganti nama variabel
 
     openModalBtn.addEventListener('click', () => {
-      rickrollVideo.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+      videoPlayer.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
       modalOverlay.style.display = 'flex';
     });
 
     closeModalBtn.addEventListener('click', () => {
       modalOverlay.style.display = 'none';
-      rickrollVideo.src = ""; 
+      videoPlayer.src = "";
     });
 
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) {
         modalOverlay.style.display = 'none';
-        rickrollVideo.src = ""; 
+        videoPlayer.src = ""; 
       }
     });
   </script>
 </body>
 </html>
-
