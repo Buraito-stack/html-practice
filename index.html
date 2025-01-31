@@ -4,21 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Latihan dasar HTML untuk membuat website sederhana">
-    <meta name="author" content="Nama Anda">
+    <meta name="author" content="Buraitod">
     <title>Website RPL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            font-size: 1.5em;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 150px;
+            border: none;
+        }
+        marquee {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        ul, ol {
+            text-align: left;
+            display: inline-block;
+        }
+        .highlight {
+            background: yellow;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            header {
+                font-size: 1.2em;
+            }
+            iframe {
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <iframe src="layout.html" style="width: 100%; height: 110x; border: none;"></iframe>
+    <iframe src="layout.html"></iframe>
     
-    <h1>Website Materi Rekayasa Perangkat Lunak</h1>
-
+    <header>Website Materi Rekayasa Perangkat Lunak</header>
+    
     <main>
         <section>
             <marquee>Halo, selamat datang di website sederhana ini! Belajar HTML dari dasar.</marquee>
-            <p style="text-align: center; font-weight: bold;">Selamat datang di halaman latihan web!</p>
+            <p class="highlight">Selamat datang di halaman latihan web!</p>
             <p>Website ini dibuat untuk latihan penggunaan HTML dasar. Anda akan menemukan berbagai elemen HTML seperti heading, daftar, dan lainnya.</p>
-            
-            <p>Contoh penggunaan elemen:</p>
             <p><b>Teks ini dicetak tebal menggunakan elemen <code>bold</code>.</b></p>
             <p><i>Teks ini dicetak miring menggunakan elemen <code>italic</code>.</i></p>
             <p><u>Teks ini digarisbawahi menggunakan elemen <code>underline</code>.</u></p>
@@ -31,7 +92,7 @@
 Teks ini ditampilkan persis seperti yang diketikkan
 menggunakan elemen <code>pre</code>.
             </pre>
-            <p><blink>Teks ini berkedip menggunakan elemen <code>blink</code> (beberapa browser tidak mendukung).</blink></p>
+            <p style="animation: blink 1s infinite alternate;">Teks ini berkedip menggunakan animasi CSS.</p>
             <blockquote>
                 "Ini adalah kutipan menggunakan elemen <code>blockquote</code>."
             </blockquote>
@@ -43,33 +104,37 @@ menggunakan elemen <code>pre</code>.
             <h2>Menu Makanan</h2>
             <h3>Makanan Ringan</h3>
             <ol>
-                <li>Keripik</li>
-                <ol type="a">
-                    <li>Keripik Kentang</li>  
-                    <li>Keripik Udang</li>
-                    <li>Keripik Ikan</li> 
-                </ol>      
-                <li>Kacang</li>
-                <ol type="a">
-                    <li>Kacang Goreng</li>  
-                    <li>Kacang Rebus</li>
-                </ol>      
-                <li>Popcorn</li>
-                <ol type="a">
-                    <li>Popcorn Caramel</li>  
-                    <li>Popcorrn Asin</li>
-                    <li>Popcorn Pedas</li> 
-                </ol>      
-                <li>Biskuit</li>
-                <ol type="a">
-                    <li>Biskuit Coklat</li>  
-                    <li>Biskuit Stroberi</li>
-                    <li>Biskuit Vanilla</li> 
-                </ol>         
+                <li>Keripik
+                    <ol type="a">
+                        <li>Keripik Kentang</li>  
+                        <li>Keripik Udang</li>
+                        <li>Keripik Ikan</li> 
+                    </ol>
+                </li>     
+                <li>Kacang
+                    <ol type="a">
+                        <li>Kacang Goreng</li>  
+                        <li>Kacang Rebus</li>
+                    </ol>
+                </li>      
+                <li>Popcorn
+                    <ol type="a">
+                        <li>Popcorn Caramel</li>  
+                        <li>Popcorn Asin</li>
+                        <li>Popcorn Pedas</li> 
+                    </ol>
+                </li>      
+                <li>Biskuit
+                    <ol type="a">
+                        <li>Biskuit Coklat</li>  
+                        <li>Biskuit Stroberi</li>
+                        <li>Biskuit Vanilla</li> 
+                    </ol>
+                </li>         
             </ol>
         </section>
-    <footer>
-        &copy; 2025 Latihan Web HTML. Semua hak cipta dilindungi.
-    </footer>
+    </main>
+    
+    <footer>&copy; 2025 Latihan Web HTML Buraito-Stack.</footer>
 </body>
 </html>
