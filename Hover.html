@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: royalblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, filter 0.3s;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .box:hover {
+            background-color: crimson;
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .box2:hover {
+            background-color: darkgreen;
+            transform: rotate(15deg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .box3:hover {
+            background-color: gold;
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .box4:hover {
+            background-color: purple;
+            transform: skewX(20deg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .box5:hover {
+            background-color: teal;
+            transform: scale(1.2) rotate(-10deg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .box6:hover {
+            background-color: orange;
+            transform: translateX(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .box7:hover {
+            background-color: magenta;
+            transform: scale(1.05) rotate(25deg);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .box8:hover {
+            background-color: darkcyan;
+            transform: translateY(15px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .box9:hover {
+            background-color: darkorange;
+            transform: rotate(30deg) scale(1.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .box10:hover {
+            background-color: darkslategray;
+            transform: translateX(-15px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        iframe {
+            width: 100%;
+            height: 110px;
+            border: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe src="layout.html"></iframe>
+
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+        <div class="box box7">7</div>
+        <div class="box box8">8</div>
+        <div class="box box9">9</div>
+        <div class="box box10">10</div>
+    </div>
+
+</body>
+</html>
