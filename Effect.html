@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Effects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+        .typewriter span {
+            border-right: 2px solid black;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .bouncing-box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <iframe src="layout.html" style="width: 100%; height: 110px; border: none;"></iframe>
+
+    <!-- Typewriter Effect -->
+    <div class="typewriter"> <span id="typewriter-text"></span></div>
+
+    <!-- Bouncing Image Effect -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DVD-Video_Logo.svg/768px-DVD-Video_Logo.svg.png?20220628064503" alt="Bouncing Image" class="bouncing-box" id="bouncing-img">
+
+    <script>
+        // Typewriter Effect
+        const text = "Hey , if you read this blud , Never gonna give you up";
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typewriter-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        typeWriter();
+
+        const img = document.getElementById("bouncing-img");
+        let x = 50, y = 50;
+        let dx = 2, dy = 2;
+        function moveImage() {
+            const maxX = window.innerWidth - img.clientWidth;
+            const maxY = window.innerHeight - img.clientHeight;
+            x += dx;
+            y += dy;
+            if (x <= 0 || x >= maxX) dx *= -1;
+            if (y <= 0 || y >= maxY) dy *= -1;
+            img.style.left = x + "px";
+            img.style.top = y + "px";
+            requestAnimationFrame(moveImage);
+        }
+        moveImage();
+    </script>
+</body>
+</html>
