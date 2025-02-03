@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll on Vertical Scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        .horizontal-scroll-section {
+            height: 100vh;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            background: #333;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .horizontal-scroll-section::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-content {
+            display: flex;
+            width: 300vw;
+            height: 100%;
+        }
+
+        .item {
+            flex: 0 0 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #fff;
+            scroll-snap-align: center;
+        }
+
+        .item:nth-child(1) { background: #ff6f61; }
+        .item:nth-child(2) { background: #6a11cb; }
+        .item:nth-child(3) { background: #2575fc; }
+    </style>
+</head>
+<body>
+    <iframe src="layout.html" style="width: 100%; height: 110px; border: none;"></iframe>
+    <div class="section">
+        Scroll ke bawah untuk melihat efek horizontal scroll!
+    </div>
+    <div class="horizontal-scroll-section">
+        <div class="scroll-content">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </div>
+    <div class="section">
+        Masih error maaf hehe
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const horizontalSection = document.querySelector('.horizontal-scroll-section');
+
+            horizontalSection.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                horizontalSection.scrollBy({
+                    left: e.deltaY * 1.2,
+                    behavior: 'smooth'
+                });
+            }, { passive: false });
+        });
+    </script>
+</body>
+</html>
