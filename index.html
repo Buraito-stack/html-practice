@@ -7,6 +7,7 @@
     <meta name="author" content="Buraitod">
     <title>Website RPL</title>
     <style>
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,15 +15,55 @@
             background-color: #f4f4f4;
             text-align: center;
         }
+
         header {
-            background-color: #007BFF;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            url('https://picsum.photos/1200/200') center/cover;
             color: white;
             padding: 15px;
             font-size: 1.5em;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
         }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        }
+
+nav a:hover {
+    color: #ffdd57; 
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
         main {
             padding: 20px;
         }
+
         section {
             background: white;
             padding: 20px;
@@ -31,24 +72,29 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         iframe {
             width: 100%;
             height: 150px;
             border: none;
         }
+
         marquee {
             font-weight: bold;
             color: #007BFF;
         }
+
         ul, ol {
             text-align: left;
             display: inline-block;
         }
+
         .highlight {
             background: yellow;
             padding: 5px;
             border-radius: 5px;
         }
+
         footer {
             background-color: #007BFF;
             color: white;
@@ -57,6 +103,7 @@
             bottom: 0;
             width: 100%;
         }
+
         @media (max-width: 600px) {
             body {
                 font-size: 14px;
@@ -68,15 +115,45 @@
                 height: 100px;
             }
         }
+
+        .container {
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between; 
+            gap: 10px; 
+            align-items: center;
+        }
+
+        .box {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 18%;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <iframe src="layout.html"></iframe>
+    <iframe src="layout.html" id="menu"></iframe>
     
-    <header>Website Materi Rekayasa Perangkat Lunak</header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#materi">Materi</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#kotak">Kotak</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="Format/Edith.png" alt="Profile Picture"> 
+        </div>
+    </header>
     
     <main>
-        <section>
+        <section id="materi">
             <marquee>Halo, selamat datang di website sederhana ini! Belajar HTML dari dasar.</marquee>
             <p class="highlight">Selamat datang di halaman latihan web!</p>
             <p>Website ini dibuat untuk latihan penggunaan HTML dasar. Anda akan menemukan berbagai elemen HTML seperti heading, daftar, dan lainnya.</p>
@@ -89,8 +166,8 @@
             <p>Teks ini disorot menggunakan elemen 2<sub>2</sub> <code>sub</code></p>
             <p>Teks ini disorot menggunakan elemen 2<sup>2</sup> <code>sup</code></p>
             <pre>
-Teks ini ditampilkan persis seperti yang diketikkan
-menggunakan elemen <code>pre</code>.
+                Teks ini ditampilkan persis seperti yang diketikkan
+                menggunakan elemen <code>pre</code>.
             </pre>
             <p style="animation: blink 1s infinite alternate;">Teks ini berkedip menggunakan animasi CSS.</p>
             <blockquote>
@@ -100,7 +177,7 @@ menggunakan elemen <code>pre</code>.
             <p><big>Teks ini diperbesar menggunakan elemen <code>big</code>.</big></p>
         </section>
 
-        <section>
+        <section id="menu">
             <h2>Menu Makanan</h2>
             <h3>Makanan Ringan</h3>
             <ol>
@@ -133,8 +210,16 @@ menggunakan elemen <code>pre</code>.
                 </li>         
             </ol>
         </section>
+
+        <section class="container" id="kotak" >
+            <div class="box">Kotak 1</div>
+            <div class="box">Kotak 2</div>
+            <div class="box">Kotak 3</div>
+            <div class="box">Kotak 4</div>
+            <div class="box">Kotak 5</div>
+        </section>
     </main>
-    
+
     <footer>&copy; 2025 Latihan Web HTML Buraito-Stack.</footer>
 </body>
 </html>
