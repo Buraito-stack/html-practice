@@ -5,100 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Pelajaran</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .table-container {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #d1ecf1;
+            transition: 0.3s;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead {
+                display: none;
+            }
+            tr {
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                padding: 10px;
+                background: white;
+            }
+            td {
+                display: flex;
+                justify-content: space-between;
+                text-align: right;
+                padding: 10px;
+            }
+            td::before {
+                content: attr(data-label);
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+    </style>
 </head>
 <body>
-    <iframe src="layout.html" style="width: 100%; height: 110x; border: none;"></iframe>
-    <table>
-        <caption>JADWAL PELAJARAN KELAS XI RPL 2 TAHUN AJARAN 2024/2025 SMT 2</caption>
-        <thead>
-            <tr>
-                <th>JAM</th>
-                <th>WAKTU</th>
-                <th>Senin</th>
-                <th>Selasa</th>
-                <th>Rabu</th>
-                <th>Kamis</th>
-                <th>Jumat</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>12:50-13:30</td>
-                <td>Bhs. Inggris</td>
-                <td>Agama dan Budi Pekerti</td>
-                <td>RPL</td>
-                <td>Bhs. Bali</td>
-                <td>P5</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>13:30-14:10</td>
-                <td>Bhs. Inggris</td>
-                <td>Agama dan Budi Pekerti</td>
-                <td>RPL</td>
-                <td>Bhs. Bali</td>
-                <td>P5</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>14:10-14:50</td>
-                <td>Bhs. Inggris</td>
-                <td>RPL</td>
-                <td>RPL</td>
-                <td>PKKWU</td>
-                <td>P5</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>14:50-15:30</td>
-                <td>Bhs. Indonesia</td>
-                <td>RPL</td>
-                <td>RPL</td>
-                <td>PKKWU</td>
-                <td>P5</td>
-            </tr>
-            <tr>
-                <td colspan="7" style="background-color: #f3f3f3; font-weight: bold;">ISTIRAHAT</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>15:45-16:25</td>
-                <td>Bhs. Indonesia</td>
-                <td>Pendidikan Pancasila</td>
-                <td>Desain Grafis</td>
-                <td>PKKWU</td>
-                <td>RPL</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>16:25-17:05</td>
-                <td>RPL</td>
-                <td>Sejarah Indonesia</td>
-                <td>Desain Grafis</td>
-                <td>RPL</td>
-                <td>RPL</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>17:05-17:45</td>
-                <td>RPL</td>
-                <td>Matematika</td>
-                <td>PKKWU</td>
-                <td>RPL</td>
-                <td>RPL</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>17:45-18:25</td>
-                <td>RPL</td>
-                <td>Matematika</td>
-                <td>PKKWU</td>
-                <td>RPL</td>
-                <td>RPL</td>
-            </tr>
-        </tbody>
-    </table>
+    <iframe src="layout.html" style="width: 100%; height: 110px; border: none;"></iframe>
+    
+    <div class="table-container">
+        <table>
+            <caption>JADWAL PELAJARAN KELAS XI RPL 2 TAHUN AJARAN 2024/2025 SMT 2</caption>
+            <thead>
+                <tr>
+                    <th>JAM</th>
+                    <th>WAKTU</th>
+                    <th>Senin</th>
+                    <th>Selasa</th>
+                    <th>Rabu</th>
+                    <th>Kamis</th>
+                    <th>Jumat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="JAM">1</td>
+                    <td data-label="WAKTU">12:50-13:30</td>
+                    <td data-label="Senin">Bhs. Inggris</td>
+                    <td data-label="Selasa">Agama dan Budi Pekerti</td>
+                    <td data-label="Rabu">RPL</td>
+                    <td data-label="Kamis">Bhs. Bali</td>
+                    <td data-label="Jumat">P5</td>
+                </tr>
+                <tr>
+                    <td data-label="JAM">2</td>
+                    <td data-label="WAKTU">13:30-14:10</td>
+                    <td data-label="Senin">Bhs. Inggris</td>
+                    <td data-label="Selasa">Agama dan Budi Pekerti</td>
+                    <td data-label="Rabu">RPL</td>
+                    <td data-label="Kamis">Bhs. Bali</td>
+                    <td data-label="Jumat">P5</td>
+                </tr>
+                <tr>
+                    <td data-label="JAM">3</td>
+                    <td data-label="WAKTU">14:10-14:50</td>
+                    <td data-label="Senin">Bhs. Inggris</td>
+                    <td data-label="Selasa">RPL</td>
+                    <td data-label="Rabu">RPL</td>
+                    <td data-label="Kamis">PKKWU</td>
+                    <td data-label="Jumat">P5</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="background-color: #f3f3f3; font-weight: bold;">ISTIRAHAT</td>
+                </tr>
+                <tr>
+                    <td data-label="JAM">4</td>
+                    <td data-label="WAKTU">14:50-15:30</td>
+                    <td data-label="Senin">Bhs. Indonesia</td>
+                    <td data-label="Selasa">RPL</td>
+                    <td data-label="Rabu">RPL</td>
+                    <td data-label="Kamis">PKKWU</td>
+                    <td data-label="Jumat">P5</td>
+                </tr>
+                <tr>
+                    <td data-label="JAM">5</td>
+                    <td data-label="WAKTU">15:45-16:25</td>
+                    <td data-label="Senin">Bhs. Indonesia</td>
+                    <td data-label="Selasa">Pendidikan Pancasila</td>
+                    <td data-label="Rabu">Desain Grafis</td>
+                    <td data-label="Kamis">PKKWU</td>
+                    <td data-label="Jumat">RPL</td>
+                </tr>
+                <tr>
+                    <td data-label="JAM">6</td>
+                    <td data-label="WAKTU">16:25-17:05</td>
+                    <td data-label="Senin">RPL</td>
+                    <td data-label="Selasa">Sejarah Indonesia</td>
+                    <td data-label="Rabu">Desain Grafis</td>
+                    <td data-label="Kamis">RPL</td>
+                    <td data-label="Jumat">RPL</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <div class="additional-schedule">
         <p><strong>Jadwal Tambahan:</strong></p>
