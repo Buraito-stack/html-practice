@@ -18,12 +18,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         .navbar ul {
             list-style: none;
             display: flex;
             margin: 0;
             padding: 0;
+            flex-wrap: nowrap;
+            overflow-x: auto; 
         }
         .navbar ul li {
             margin: 0 10px;
@@ -39,12 +42,12 @@
             transform: scale(1.1);
         }
         .brand {
-        background-image: url('Format/Edith.png'); 
-        background-size: cover; 
-        background-position: center; 
-        width: 40px; 
-        height: 40px;
-        border-radius: 50%; 
+            background-image: url('Format/Edith.png'); 
+            background-size: cover; 
+            background-position: center; 
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%; 
         }
         .menu-toggle {
             display: none;
@@ -118,7 +121,7 @@
 <body>
     <nav>
         <div class="navbar">
-            <div class="brand" ></div>
+            <div class="brand"></div>
             <div class="menu-toggle" id="menu-toggle">
                 <div></div>
                 <div></div>
@@ -139,6 +142,7 @@
                 <li><a href="Effect.html" target="_parent">Css Effects</a></li>
                 <li><a href="Particle-E.html" target="_parent">Particle Effect</a></li>
                 <li><a href="HorizontalScroll.html" target="_parent">Horizontal Scroll</a></li>
+                <li><a href="Magnifier.html" target="_parent">Img Magnifier</a></li>
             </ul>
         </div>
         <div class="mobile-nav" id="mobile-nav">
@@ -156,6 +160,7 @@
                 <li><a href="Effect.html" target="_parent">Css Effects</a></li>
                 <li><a href="Particle-E.html" target="_parent">Particle Effect</a></li>
                 <li><a href="HorizontalScroll.html" target="_parent">Horizontal Scroll</a></li>
+                <li><a href="Magnifier.html" target="_parent">Img Magnifier</a></li>
             </ul>
         </div>
     </nav>
