@@ -22,6 +22,22 @@
       flex-direction: column;
     }
 
+    iframe {
+      width: 100%;
+      height: 100px;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 120px; 
+    }
+
     .calculator {
       width: 320px;
       background: white;
@@ -129,31 +145,34 @@
   </style>
 </head>
 <body>
-  <iframe src="layout.html" style="width: 100%; height: 100px; border: none;"></iframe>
-  <div class="calculator">
-    <h1>Kalkulator</h1>
-    <input type="text" id="display" class="display" disabled>
-    <div class="buttons">
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="appendToDisplay('/')">/</button>
-      <button onclick="appendToDisplay('*')">*</button>
-      <button onclick="deleteLast()">⌫</button>
-      <button onclick="appendToDisplay('7')">7</button>
-      <button onclick="appendToDisplay('8')">8</button>
-      <button onclick="appendToDisplay('9')">9</button>
-      <button onclick="appendToDisplay('-')">-</button>
-      <button onclick="appendToDisplay('4')">4</button>
-      <button onclick="appendToDisplay('5')">5</button>
-      <button onclick="appendToDisplay('6')">6</button>
-      <button onclick="appendToDisplay('+')">+</button>
-      <button onclick="appendToDisplay('1')">1</button>
-      <button onclick="appendToDisplay('2')">2</button>
-      <button onclick="appendToDisplay('3')">3</button>
-      <button onclick="calculateResult()">=</button>
-      <button onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
-      <button onclick="appendToDisplay('.')">.</button>
+  <iframe src="layout.html"></iframe>
+
+  <div class="container">
+    <div class="calculator">
+      <h1>Kalkulator</h1>
+      <input type="text" id="display" class="display" disabled>
+      <div class="buttons">
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendToDisplay('/')">/</button>
+        <button onclick="appendToDisplay('*')">*</button>
+        <button onclick="deleteLast()">⌫</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('-')">-</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+      </div>
+      <button class="history-button" onclick="toggleHistory()">Lihat Riwayat</button>
     </div>
-    <button class="history-button" onclick="toggleHistory()">Lihat Riwayat</button>
   </div>
 
   <div class="history-popup" id="history-popup">
@@ -163,17 +182,27 @@
   </div>
 
   <script>
+    let isError = false; 
+
     function appendToDisplay(value) {
-      document.getElementById('display').value += value;
+      let display = document.getElementById('display');
+      if (isError) {
+        clearDisplay();
+        isError = false;
+      }
+      display.value += value;
     }
 
     function clearDisplay() {
       document.getElementById('display').value = '';
+      isError = false;
     }
 
     function deleteLast() {
       let display = document.getElementById('display');
-      display.value = display.value.slice(0, -1);
+      if (!isError) {
+        display.value = display.value.slice(0, -1);
+      }
     }
 
     function calculateResult() {
@@ -185,6 +214,7 @@
         addToHistory(expression + ' = ' + result);
       } catch {
         document.getElementById('display').value = 'Error';
+        isError = true; 
       }
     }
 
@@ -202,3 +232,4 @@
   </script>
 </body>
 </html>
+
