@@ -3,40 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Effects</title>
+    <title>Test Effects with Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: #f0f0f0;
-            overflow: hidden;
+        @keyframes blink {
+            50% { opacity: 0; }
         }
-        .typewriter span {
-            border-right: 2px solid black;
-            white-space: nowrap;
-            overflow: hidden;
-            display: inline-block;
-        }
-        .bouncing-box {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            top: 50px;
-            left: 50px;
+        .animate-blink {
+            animation: blink 1s step-start infinite;
         }
     </style>
 </head>
-<body>
-    <iframe src="layout.html" style="width: 100%; height: 110px; border: none;"></iframe>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+    <iframe src="layout.html" class="w-full h-20 border-none"></iframe>
 
-    <div class="typewriter"> <span id="typewriter-text"></span></div>
+    <div class="typewriter text-2xl font-bold p-4">
+        <span id="typewriter-text" class="border-r-2 border-white animate-blink"></span>
+    </div>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DVD-Video_Logo.svg/768px-DVD-Video_Logo.svg.png?20220628064503" alt="Bouncing Image" class="bouncing-box" id="bouncing-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DVD-Video_Logo.svg/768px-DVD-Video_Logo.svg.png?20220628064503" 
+         alt="Bouncing Image" 
+         class="bouncing-box w-24 h-24 animate-bounce absolute hover:scale-110 transition-transform duration-300" 
+         id="bouncing-img">
 
     <script>
-        const text = "Hey , if you read this blud , Never gonna give you up";
+        const text = "Hey, if you read this blud, Never gonna give you up";
         let index = 0;
         function typeWriter() {
             if (index < text.length) {
