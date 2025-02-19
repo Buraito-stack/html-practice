@@ -12,19 +12,54 @@
         .animate-blink {
             animation: blink 1s step-start infinite;
         }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff0, 0 0 15px #ff0; }
+            50% { text-shadow: 0 0 10px #ff0, 0 0 20px #f0f, 0 0 30px #f0f; }
+            100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff0, 0 0 15px #ff0; }
+        }
+        .glowing-text {
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes colorPulse {
+            0% { color: #ff4b2b; }
+            50% { color: #ff416c; }
+            100% { color: #ff4b2b; }
+        }
+        .color-pulse {
+            animation: colorPulse 2s infinite;
+        }
+
+        .rotating {
+            transition: transform 0.5s ease-in-out;
+        }
+        .rotating:hover {
+            transform: rotate(360deg);
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+<body class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white parallax" 
+      style="background-image: url('https://picsum.photos/1200/200');">
+
     <iframe src="layout.html" class="w-full h-20 border-none"></iframe>
 
-    <div class="typewriter text-2xl font-bold p-4">
+    <div class="typewriter text-2xl font-bold p-4 glowing-text">
         <span id="typewriter-text" class="border-r-2 border-white animate-blink"></span>
     </div>
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DVD-Video_Logo.svg/768px-DVD-Video_Logo.svg.png?20220628064503" 
          alt="Bouncing Image" 
-         class="bouncing-box w-24 h-24 animate-bounce absolute hover:scale-110 transition-transform duration-300" 
+         class="bouncing-box w-24 h-24 animate-bounce absolute rotating transition-transform duration-300" 
          id="bouncing-img">
+
+    <p class="text-lg mt-10 font-semibold color-pulse">This text has a color pulse effect!</p>
 
     <script>
         const text = "Hey, if you read this blud, Never gonna give you up";
