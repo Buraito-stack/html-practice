@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latihan dasar HTML untuk membuat website sederhana">
+    <meta name="author" content="Buraitod">
+    <title>Website RPL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Navbar */
+        header {
+            position: relative;
+            width: 100%;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #ff6347;
+        }
+
+        /* Background Image */
+        .hero {
+            width: 100%;
+            height: 400px;
+            background: url('https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_1280.jpg') no-repeat center/cover;
+            position: relative;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .photo {
+            position: relative;
+            width: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .photo img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .photo:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .photo:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #fff;
+            padding: 50px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form div {
+            display: flex;
+            align-items: center;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .contact-form i {
+            margin-right: 10px;
+            color: #ff6347;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .contact-form button {
+            background: #ff6347;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #e55347;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="hero">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html">Materi</a></li>
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="index.html">Kotak</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- Photo Gallery -->
+<div class="photo-gallery">
+    <div class="photo">
+        <img src="https://picsum.photos/300/200?random=1" alt="Pantai" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+        <div class="overlay">Pantai</div>
+    </div>
+    <div class="photo">
+        <img src="https://loremflickr.com/300/200/coding" alt="Coding" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+        <div class="overlay">Coding</div>
+    </div>
+    <div class="photo">
+        <img src="https://picsum.photos/300/200?random=2" alt="Gunung" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+        <div class="overlay">Gunung</div>
+    </div>
+    <div class="photo">
+        <img src="https://loremflickr.com/300/200/forest" alt="Hutan" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+        <div class="overlay">Hutan</div>
+    </div>
+    <div class="photo">
+        <img src="https://picsum.photos/300/200?random=3" alt="Sunset" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+        <div class="overlay">Sunset</div>
+    </div>
+</div>
+
+
+    <!-- Contact Form -->
+    <div class="contact">
+        <h2>Hubungi Kami</h2>
+        <form class="contact-form">
+            <div>
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Nama Anda" required>
+            </div>
+            <div>
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email Anda" required>
+            </div>
+            <div>
+                <i class="fas fa-comment"></i>
+                <textarea placeholder="Pesan Anda" required></textarea>
+            </div>
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+
+</body>
+</html>
