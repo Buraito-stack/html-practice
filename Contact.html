@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Latihan dasar HTML untuk membuat website sederhana">
     <meta name="author" content="Buraitod">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Website RPL</title>
     <style>
         * {
@@ -110,68 +111,68 @@
             opacity: 1;
         }
 
-        /* Contact Section */
-        .contact {
-            background: #fff;
-            padding: 50px;
-            max-width: 600px;
-            margin: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+        .footer {
+    background: linear-gradient(135deg, #222, #444);
+    color: white;
+    padding: 40px 0;
+}
 
-        .contact h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
+.footer-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 0 20px;
+}
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+.footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
 
-        .contact-form div {
-            display: flex;
-            align-items: center;
-            background: #f4f4f4;
-            padding: 10px;
-            border-radius: 5px;
-        }
+.footer-contact h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            border: none;
-            outline: none;
-            background: transparent;
-            padding: 10px;
-            font-size: 16px;
-        }
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    margin: 8px 0;
+}
 
-        .contact-form i {
-            margin-right: 10px;
-            color: #ff6347;
-        }
+.contact-item i {
+    font-size: 20px;
+    color: #ffd700;
+}
 
-        .contact-form textarea {
-            resize: none;
-            height: 100px;
-        }
+.contact-item a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
 
-        .contact-form button {
-            background: #ff6347;
-            color: white;
-            padding: 10px;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+.contact-item a:hover {
+    color: #ff6347;
+}
 
-        .contact-form button:hover {
-            background: #e55347;
-        }
+.footer-map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    border: none;
+}
+
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -217,25 +218,33 @@
 </div>
 
 
-    <!-- Contact Form -->
-    <div class="contact">
-        <h2>Hubungi Kami</h2>
-        <form class="contact-form">
-            <div>
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Nama Anda" required>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/buraittooo" target="_blank">@buraittooo</a>
             </div>
-            <div>
+            <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Email Anda" required>
+                <a href="mailto:email@example.co">bryantedy@gmail.com</a>
             </div>
-            <div>
-                <i class="fas fa-comment"></i>
-                <textarea placeholder="Pesan Anda" required></textarea>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/Buraito-stack" target="_blank">Buraito-stack</a>
             </div>
-            <button type="submit">Kirim</button>
-        </form>
+        </div>
+        <div class="footer-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.998375977243!2d106.82718331570547!3d-6.175110895530754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1e377c3e3a5%3A0x8bda1c6d1ddf9c47!2sMonas!5e0!3m2!1sid!2sid!4v1610917372752!5m2!1sid!2sid"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
     </div>
+</footer>
+
+
 
 </body>
 </html>
