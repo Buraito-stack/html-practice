@@ -20,6 +20,7 @@
             text-align: center;
         }
 
+        /* Navbar */
         header {
             position: relative;
             width: 100%;
@@ -56,6 +57,7 @@
             color: #ff6347;
         }
 
+
         .hero {
             width: 100%;
             height: 400px;
@@ -76,7 +78,6 @@
             width: 200px;
             border-radius: 10px;
             overflow: hidden;
-            cursor: pointer;
         }
 
         .photo img {
@@ -102,10 +103,7 @@
             font-size: 16px;
             opacity: 0;
             transition: opacity 0.3s ease;
-        }
-
-        .photo:hover .overlay {
-            opacity: 1;
+            border-radius: 0 0 10px 10px;
         }
 
         .popup {
@@ -147,6 +145,10 @@
             font-size: 30px;
             color: white;
             cursor: pointer;
+        }
+
+        .photo:hover .overlay {
+            opacity: 1;
         }
 
         .footer {
@@ -255,39 +257,36 @@
             </nav>
         </div>
     </header>
-
-    <body>
-        <div class="photo-gallery">
-            <div class="photo" onclick="openPopup('https://picsum.photos/600/400?random=1', 'Pantai yang indah dengan pasir putih dan laut biru sejauh mata memandang.')">
-                <img src="https://picsum.photos/300/200?random=1" alt="Pantai">
-                <div class="overlay">Pantai</div>
-            </div>
-            <div class="photo" onclick="openPopup('https://loremflickr.com/600/400/coding', 'Seorang programmer yang sedang mengerjakan proyek besar dengan kode yang kompleks.')">
-                <img src="https://loremflickr.com/300/200/coding" alt="Coding">
-                <div class="overlay">Coding</div>
-            </div>
-            <div class="photo" onclick="openPopup('https://picsum.photos/600/400?random=2', 'Pemandangan gunung yang tinggi dengan awan yang menutupi puncaknya.')">
-                <img src="https://picsum.photos/300/200?random=2" alt="Gunung">
-                <div class="overlay">Gunung</div>
-            </div>
-            <div class="photo" onclick="openPopup('https://loremflickr.com/600/400/forest', 'Hutan yang lebat dengan pepohonan hijau dan udara yang segar.')">
-                <img src="https://loremflickr.com/300/200/forest" alt="Hutan">
-                <div class="overlay">Hutan</div>
-            </div>
-            <div class="photo" onclick="openPopup('https://picsum.photos/600/400?random=3', 'Senja yang indah dengan warna jingga dan ungu yang menghiasi langit.')">
-                <img src="https://picsum.photos/300/200?random=3" alt="Sunset">
-                <div class="overlay">Sunset</div>
-            </div>
+    <div class="photo-gallery">
+        <div class="photo" onclick="openPopup('https://picsum.photos/600/400?random=1', 'Pantai yang indah dengan pasir putih dan laut biru sejauh mata memandang.')">
+            <img src="https://picsum.photos/300/200?random=1" alt="Pantai">
+            <div class="overlay">Pantai</div>
         </div>
-    
-        <div class="popup" id="popup">
-            <span class="popup-close" onclick="closePopup()">&times;</span>
-            <div class="popup-content">
-                <img id="popup-image" src="" alt="Popup Image">
-                <div class="popup-text" id="popup-text"></div>
-            </div>
+        <div class="photo" onclick="openPopup('https://loremflickr.com/600/400/coding', 'Seorang programmer yang sedang mengerjakan proyek besar dengan kode yang kompleks.')">
+            <img src="https://loremflickr.com/300/200/coding" alt="Coding">
+            <div class="overlay">Coding</div>
         </div>
+        <div class="photo" onclick="openPopup('https://picsum.photos/600/400?random=2', 'Pemandangan gunung yang tinggi dengan awan yang menutupi puncaknya.')">
+            <img src="https://picsum.photos/300/200?random=2" alt="Gunung">
+            <div class="overlay">Gunung</div>
+        </div>
+        <div class="photo" onclick="openPopup('https://loremflickr.com/600/400/forest', 'Hutan yang lebat dengan pepohonan hijau dan udara yang segar.')">
+            <img src="https://loremflickr.com/300/200/forest" alt="Hutan">
+            <div class="overlay">Hutan</div>
+        </div>
+        <div class="photo" onclick="openPopup('https://picsum.photos/600/400?random=3', 'Senja yang indah dengan warna jingga dan ungu yang menghiasi langit.')">
+            <img src="https://picsum.photos/300/200?random=3" alt="Sunset">
+            <div class="overlay">Sunset</div>
+        </div>
+    </div>
 
+    <div class="popup" id="popup">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <div class="popup-content">
+            <img id="popup-image" src="" alt="Popup Image">
+            <div class="popup-text" id="popup-text"></div>
+        </div>
+    </div>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-form">
@@ -325,7 +324,7 @@
             </div>
         </div>
     </footer>
-    <script>
+        <script>
         function openPopup(imageSrc, description) {
             document.getElementById('popup-image').src = imageSrc;
             document.getElementById('popup-text').innerText = description;
