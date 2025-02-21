@@ -118,16 +118,44 @@
 }
 
 .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
     max-width: 1000px;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     text-align: left;
-    padding: 0 20px;
 }
 
+
+.footer-form, .footer-contact, .footer-map {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-form input, .footer-form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-form button {
+    background: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-form button:hover {
+    background: #e5533d;
+}
 .footer-contact {
     flex: 1;
     min-width: 250px;
@@ -160,7 +188,6 @@
 .contact-item a:hover {
     color: #ff6347;
 }
-
 .footer-map {
     flex: 1;
     min-width: 300px;
@@ -217,9 +244,18 @@
     </div>
 </div>
 
-
 <footer class="footer">
     <div class="footer-container">
+        <div class="footer-form">
+            <h2>Kirim Pesan</h2>
+            <form action="#" method="POST">
+                <input type="text" placeholder="Nama" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Pesan" required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+        
         <div class="footer-contact">
             <h2>Hubungi Kami</h2>
             <div class="contact-item">
@@ -235,16 +271,15 @@
                 <a href="https://github.com/Buraito-stack" target="_blank">Buraito-stack</a>
             </div>
         </div>
+        
         <div class="footer-map">
+            <h2>Lokasi Kami</h2>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.998375977243!2d106.82718331570547!3d-6.175110895530754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1e377c3e3a5%3A0x8bda1c6d1ddf9c47!2sMonas!5e0!3m2!1sid!2sid!4v1610917372752!5m2!1sid!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.003792836233!2d115.21536237468072!3d-8.670458290601328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240f019ed37a9%3A0x5027a76e356c230!2sDenpasar%2C%20Bali!5e0!3m2!1sid!2sid!4v1708500000000!5m2!1sid!2sid"
                 allowfullscreen="" loading="lazy">
             </iframe>
         </div>
     </div>
 </footer>
-
-
-
 </body>
 </html>
