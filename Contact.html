@@ -20,7 +20,6 @@
             text-align: center;
         }
 
-        /* Navbar */
         header {
             position: relative;
             width: 100%;
@@ -57,7 +56,6 @@
             color: #ff6347;
         }
 
-        /* Background Image */
         .hero {
             width: 100%;
             height: 400px;
@@ -65,7 +63,6 @@
             position: relative;
         }
 
-        /* Photo Gallery */
         .photo-gallery {
             display: flex;
             justify-content: center;
@@ -112,100 +109,98 @@
         }
 
         .footer {
-    background: linear-gradient(135deg, #222, #444);
-    color: white;
-    padding: 40px 0;
-}
+            background: linear-gradient(135deg, #222, #444);
+            color: white;
+            padding: 40px 0;
+        }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-    text-align: left;
-}
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: left;
+        }
 
 
-.footer-form, .footer-contact, .footer-map {
-    flex: 1;
-    min-width: 250px;
-}
+        .footer-form, .footer-contact, .footer-map {
+            flex: 1;
+            min-width: 250px;
+        }
 
-.footer-form input, .footer-form textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
+        .footer-form input, .footer-form textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
 
-.footer-form button {
-    background: #ff6347;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        .footer-form button {
+            background: #ffd700;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.footer-form button:hover {
-    background: #e5533d;
-}
-.footer-contact {
-    flex: 1;
-    min-width: 250px;
-}
+        .footer-form button:hover {
+            background: #c5a703;
+        }
 
-.footer-contact h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
+        .footer-contact {
+            flex: 1;
+            min-width: 250px;
+        }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 16px;
-    margin: 8px 0;
-}
+        .footer-contact h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
 
-.contact-item i {
-    font-size: 20px;
-    color: #ffd700;
-}
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            margin: 8px 0;
+        }
 
-.contact-item a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
-}
+        .contact-item i {
+            font-size: 20px;
+            color: #ffd700;
+        }
 
-.contact-item a:hover {
-    color: #ff6347;
-}
-.footer-map {
-    flex: 1;
-    min-width: 300px;
-}
+        .contact-item a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
 
-.footer-map iframe {
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-    border: none;
-}
+        .contact-item a:hover {
+            color: #c7aa06;
+        }
 
+        .footer-map {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-map iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            border: none;
+        }
     </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <!-- Hero Section -->
     <header>
         <div class="hero">
             <nav class="navbar">
@@ -220,66 +215,65 @@
         </div>
     </header>
 
-<!-- Photo Gallery -->
-<div class="photo-gallery">
-    <div class="photo">
-        <img src="https://picsum.photos/300/200?random=1" alt="Pantai" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-        <div class="overlay">Pantai</div>
+    <div class="photo-gallery">
+        <div class="photo">
+            <img src="https://picsum.photos/300/200?random=1" alt="Pantai">
+            <div class="overlay">Pantai</div>
+        </div>
+        <div class="photo">
+            <img src="https://loremflickr.com/300/200/coding" alt="Coding">
+            <div class="overlay">Coding</div>
+        </div>
+        <div class="photo">
+            <img src="https://picsum.photos/300/200?random=2" alt="Gunung">
+            <div class="overlay">Gunung</div>
+        </div>
+        <div class="photo">
+            <img src="https://loremflickr.com/300/200/forest" alt="Hutan">
+            <div class="overlay">Hutan</div>
+        </div>
+        <div class="photo">
+            <img src="https://picsum.photos/300/200?random=3" alt="Sunset">
+            <div class="overlay">Sunset</div>
+        </div>
     </div>
-    <div class="photo">
-        <img src="https://loremflickr.com/300/200/coding" alt="Coding" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-        <div class="overlay">Coding</div>
-    </div>
-    <div class="photo">
-        <img src="https://picsum.photos/300/200?random=2" alt="Gunung" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-        <div class="overlay">Gunung</div>
-    </div>
-    <div class="photo">
-        <img src="https://loremflickr.com/300/200/forest" alt="Hutan" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-        <div class="overlay">Hutan</div>
-    </div>
-    <div class="photo">
-        <img src="https://picsum.photos/300/200?random=3" alt="Sunset" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-        <div class="overlay">Sunset</div>
-    </div>
-</div>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-form">
-            <h2>Kirim Pesan</h2>
-            <form action="#" method="POST">
-                <input type="text" placeholder="Nama" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Pesan" required></textarea>
-                <button type="submit">Kirim</button>
-            </form>
-        </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-form">
+                <h2>Kirim Pesan</h2>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Nama" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Pesan" required></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+            </div>
         
-        <div class="footer-contact">
-            <h2>Hubungi Kami</h2>
-            <div class="contact-item">
-                <i class="fab fa-instagram"></i>
-                <a href="https://www.instagram.com/buraittooo" target="_blank">@buraittooo</a>
+            <div class="footer-contact">
+                <h2>Hubungi Kami</h2>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/buraittooo" target="_blank">@buraittooo</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:email@example.co">bryantedy@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/Buraito-stack" target="_blank">Buraito-stack</a>
+                </div>
             </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:email@example.co">bryantedy@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-github"></i>
-                <a href="https://github.com/Buraito-stack" target="_blank">Buraito-stack</a>
-            </div>
-        </div>
         
-        <div class="footer-map">
-            <h2>Lokasi Kami</h2>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.003792836233!2d115.21536237468072!3d-8.670458290601328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240f019ed37a9%3A0x5027a76e356c230!2sDenpasar%2C%20Bali!5e0!3m2!1sid!2sid!4v1708500000000!5m2!1sid!2sid"
-                allowfullscreen="" loading="lazy">
-            </iframe>
+            <div class="footer-map">
+                <h2>Lokasi Kami</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.003792836233!2d115.21536237468072!3d-8.670458290601328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240f019ed37a9%3A0x5027a76e356c230!2sDenpasar%2C%20Bali!5e0!3m2!1sid!2sid!4v1708500000000!5m2!1sid!2sid"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
