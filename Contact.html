@@ -109,6 +109,7 @@
             border-radius: 0 0 10px 10px;
         }
 
+   
         .popup {
             display: none;
             position: fixed;
@@ -119,35 +120,48 @@
             background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .popup-content {
             background: white;
             display: flex;
+            flex-direction: column;
             align-items: center;
             padding: 20px;
             border-radius: 10px;
-            max-width: 80%;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
             gap: 20px;
+            position: relative;
         }
 
         .popup img {
+            width: 100%;
             max-width: 400px;
             border-radius: 10px;
         }
 
         .popup-text {
-            text-align: left;
+            text-align: center;
             max-width: 400px;
         }
 
         .popup-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 15px;
             font-size: 30px;
-            color: white;
+            color: black;
             cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .popup-content {
+                flex-direction: row;
+                text-align: left;
+            }
         }
 
         .photo:hover .overlay {
@@ -299,12 +313,13 @@
         </div>
     </div>
 
-    <div class="popup" id="popup">
-        <span class="popup-close" onclick="closePopup()">&times;</span>
-        <div class="popup-content">
-            <img id="popup-image" src="" alt="Popup Image">
+    <div class="popup" id="popup" onclick="closePopup(event)">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <span class="popup-close" onclick="closePopup(event)">&times;</span>
+            <img id="popup-img" src="" alt="Popup Image">
             <div class="popup-text" id="popup-text"></div>
         </div>
+    </div>
     </div>
     <footer class="footer" id="contact">
         <h1 align="center">Contact Us</h1>
@@ -348,16 +363,18 @@
             </div>
         </div>
     </footer>
-        <script>
-        function openPopup(imageSrc, description) {
-            document.getElementById('popup-image').src = imageSrc;
-            document.getElementById('popup-text').innerText = description;
-            document.getElementById('popup').style.display = 'flex';
-        }
+    <script>
+    function openPopup(imageUrl, description) {
+                document.getElementById('popup-img').src = imageUrl;
+                document.getElementById('popup-text').innerText = description;
+                document.getElementById('popup').style.display = 'flex';
+            }
 
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
+            function closePopup(event) {
+                if (event.target.id === 'popup' || event.target.classList.contains('popup-close')) {
+                    document.getElementById('popup').style.display = 'none';
+                }
+            }       
     </script>
 </body>
 </html>
