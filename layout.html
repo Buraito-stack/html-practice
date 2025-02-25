@@ -51,24 +51,26 @@
             position: relative;
         }
         .profile-menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            width: 200px;
-            transform: scale(0.8);
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-        }
-        .profile-menu.active {
-            display: block;
-            transform: scale(1);
-            opacity: 1;
-        }
+    display: none;
+    position: absolute;
+    top: 100%; /* Posisikan tepat di bawah tombol */
+    left: 0; /* Tetap dekat dengan tombol profil */
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.profile-menu.active {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
         .profile-menu a {
             display: block;
             padding: 15px;
