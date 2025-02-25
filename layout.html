@@ -44,8 +44,8 @@
             background-image: url('Format/Edith.png'); 
             background-size: cover; 
             background-position: center; 
-            width: 40px; 
-            height: 40px;
+            width: 50px; 
+            height: 50px;
             border-radius: 50%;
             cursor: pointer;
             position: relative;
@@ -53,22 +53,33 @@
         .profile-menu {
             display: none;
             position: absolute;
-            top: 50px;
+            top: 60px;
             right: 20px;
             background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
             overflow: hidden;
+            width: 200px;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .profile-menu.active {
+            display: block;
+            transform: scale(1);
+            opacity: 1;
         }
         .profile-menu a {
             display: block;
-            padding: 10px 20px;
+            padding: 15px;
             text-decoration: none;
             color: #333;
-            transition: background 0.3s;
+            font-size: 16px;
+            transition: background 0.3s, color 0.3s;
         }
         .profile-menu a:hover {
-            background-color: #f0f0f0;
+            background-color: #007bff;
+            color: white;
         }
         .menu-toggle {
             display: none;
@@ -116,41 +127,15 @@
                 <div></div>
                 <div></div>
             </div>
-
             <ul>
                 <li><a href="index.html" target="_parent">Beranda</a></li>
                 <li><a href="Schedule table.html" target="_parent">Jadwal</a></li>
-                <li><a href="Format.html" target="_parent">Format</a></li>
-                <li><a href="hyperlink.html" target="_parent">Hyperlink</a></li>
-                <li><a href="Formulir.html" target="_parent">Formulir</a></li>
-                <li><a href="css.html" target="_parent">Grid-test</a></li>
-                <li><a href="Kalkulator.html" target="_parent">Kalkulator</a></li>
-                <li><a href="PopUp.html" target="_parent">Pop Up</a></li>
-                <li><a href="Parallax.html" target="_parent">Parallax Scrolling</a></li>
-                <li><a href="Flip.html" target="_parent">Card Flip</a></li>
-                <li><a href="Hover.html" target="_parent">Hover Effect</a></li>
-                <li><a href="Effect.html" target="_parent">Css Effects</a></li>
-                <li><a href="Particle-E.html" target="_parent">Particle Effect</a></li>
-                <li><a href="HorizontalScroll.html" target="_parent">Horizontal Scroll</a></li>
-                <li><a href="Image.html" target="_parent">Img</a></li>
             </ul>
         </div>
         <div class="mobile-nav" id="mobile-nav">
             <ul>
                 <li><a href="index.html" target="_parent">Beranda</a></li>
                 <li><a href="Schedule table.html" target="_parent">Jadwal</a></li>
-                <li><a href="Format.html" target="_parent">Format</a></li>
-                <li><a href="hyperlink.html" target="_parent">Hyperlink</a></li>
-                <li><a href="Formulir.html" target="_parent">Formulir</a></li>
-                <li><a href="css.html" target="_parent">Grid-test</a></li>
-                <li><a href="PopUp.html" target="_parent">Pop Up</a></li>
-                <li><a href="Parallax.html" target="_parent">Parallax Scrolling</a></li>
-                <li><a href="Flip.html" target="_parent">Card Flip</a></li>
-                <li><a href="Hover.html" target="_parent">Hover Effect</a></li>
-                <li><a href="Effect.html" target="_parent">Css Effects</a></li>
-                <li><a href="Particle-E.html" target="_parent">Particle Effect</a></li>
-                <li><a href="HorizontalScroll.html" target="_parent">Horizontal Scroll</a></li>
-                <li><a href="Image.html" target="_parent">Img</a></li>
             </ul>
         </div>
     </nav>
@@ -166,12 +151,12 @@
 
         profileBtn.addEventListener('click', (event) => {
             event.stopPropagation();
-            profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+            profileMenu.classList.toggle('active');
         });
 
         document.addEventListener('click', (event) => {
             if (!profileBtn.contains(event.target) && !profileMenu.contains(event.target)) {
-                profileMenu.style.display = 'none';
+                profileMenu.classList.remove('active');
             }
         });
     </script>
