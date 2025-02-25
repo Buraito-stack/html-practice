@@ -64,7 +64,7 @@
 </head>
 <body>
     <div class="register-container">
-        <form class="register-form" onsubmit="return validateRegister(event)">
+        <form class="register-form" onsubmit="redirectToIndex(event)">
             <h2>Create an Account</h2>
             <div class="input-group">
                 <input type="text" id="reg-username" placeholder="Username" required>
@@ -80,19 +80,10 @@
         </form>
     </div>
     <script>
-        function validateRegister(event) {
-            event.preventDefault();
-            const username = document.getElementById('reg-username').value.trim();
-            const email = document.getElementById('reg-email').value.trim();
-            const password = document.getElementById('reg-password').value.trim();
-            
-            if (username === '' || email === '' || password === '') {
-                alert('Please fill in all fields');
-                return false;
-            }
-            
+        function redirectToIndex(event) {
+            event.preventDefault(); 
             alert('Registration successful!');
-            return true;
+            window.location.href = 'index.html'; 
         }
     </script>
 </body>
