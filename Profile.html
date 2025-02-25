@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .sidebar ul li:hover {
+            background: #3498db;
+            color: white;
+        }
+        .content {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .profile-header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3498db;
+        }
+        .profile-header h2 {
+            font-size: 22px;
+            color: #333;
+        }
+        .profile-form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-back {
+            background: #3498db;
+            color: white;
+        }
+        .btn-logout {
+            background: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li>Dashboard</li>
+            <li>Profile</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="profile-header">
+            <img src="Format/Edith.png" alt="Foto Profil">
+            <h2>Username</h2>
+        </div>
+        <div class="profile-form">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" value="user@example.com" disabled>
+            </div>
+            <div class="form-group">
+                <label>Deskripsi</label>
+                <input type="text" value="Deskripsi singkat tentang pengguna.">
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-back" onclick="window.location.href='index.html'">Kembali</button>
+            <button class="btn btn-logout" onclick="window.location.href='login.html'">Log Out</button>
+        </div>
+    </div>
+</body>
+</html>
