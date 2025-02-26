@@ -5,42 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+        }
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            margin: 0;
+            background: #2c2a38;
         }
-        .login-container {
-            background: white;
-            padding: 2rem;
+        .container {
+            display: flex;
+            background: #332f44;
             border-radius: 10px;
+            overflow: hidden;
+            width: 800px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            max-width: 350px;
-            width: 100%;
         }
-        .login-form h2 {
-            margin-bottom: 1rem;
-            color: #333;
+        .left {
+            flex: 1;
+            background: url('https://i.pinimg.com/236x/96/c3/65/96c36530804f76a69050d0d0a40a5a72.jpg') center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .right {
+            flex: 1;
+            background: #1e1b29;
+            padding: 40px;
+            color: white;
+        }
+        .right h2 {
+            margin-bottom: 20px;
         }
         .input-group {
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
         .input-group input {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 5px;
             font-size: 1rem;
+            background: #2c2a38;
+            color: white;
         }
-        button {
+        .input-group input:focus {
+            outline: none;
+            border: 1px solid #764ba2;
+        }
+        .button {
             width: 100%;
             padding: 10px;
-            background: #667eea;
+            background: #764ba2;
             border: none;
             color: white;
             font-size: 1rem;
@@ -48,39 +72,45 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        button:hover {
+        .button:hover {
             background: #5a67d8;
         }
-        .signup-link {
-            margin-top: 1rem;
-            font-size: 0.9rem;
+        .footer {
+            margin-top: 15px;
+            text-align: center;
         }
-        .signup-link a {
-            color: #667eea;
+        .footer a {
+            color: #764ba2;
             text-decoration: none;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <form class="login-form" onsubmit="redirectToIndex(event)">
-            <h2>Welcome Back</h2>
-            <div class="input-group">
-                <input type="text" id="username" placeholder="Username" required>
+    <div class="container">
+        <div class="left">
+            <h3>Welcome Back Master.</h3>
+        </div>
+        <div class="right">
+            <h2>Login</h2>
+            <form onsubmit="login(event)">
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <button class="button" type="submit">Login</button>
+            </form>
+            <div class="footer">
+                <p>Don't have an account? <a href="Register.html">Sign up</a></p>
             </div>
-            <div class="input-group">
-                <input type="password" id="password" placeholder="Password" required>
-            </div>
-            <button type="submit">Login</button>
-            <p class="signup-link">Don't have an account? <a href="Register.html">Sign up</a></p>
-        </form>
+        </div>
     </div>
     <script>
-        function redirectToIndex(event) {
-            event.preventDefault(); 
-            alert('Registration successful!');
-            window.location.href = 'index.html'; 
+        function login(event) {
+            event.preventDefault();
+            alert('Login successful!');
+            window.location.href = 'index.html';
         }
     </script>
 </body>

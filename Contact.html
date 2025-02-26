@@ -9,23 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Website RPL</title>
     <style>
-        * {
+  * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Poppins , sans-serif;
+            font-family: Poppins, sans-serif;
         }
 
         body {
             background-color: #f4f4f4;
-            text-align: center;
         }
 
-        /* Navbar */
-        header {
+        /* Hero Section */
+        .hero {
             position: relative;
             width: 100%;
-            margin-bottom: 20px; 
+            height: 400px;
+            background: url('https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_1280.jpg') no-repeat center/cover;
         }
 
         .navbar {
@@ -33,9 +33,56 @@
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
             background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 10px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .profile .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: url('Format/Edith.png') center/cover;
+        }
+
+        .profile-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            width: 160px;
+        }
+
+        .profile-menu.active {
+            display: block;
+        }
+
+        .profile-menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .profile-menu a:hover {
+            background: #007bff;
+            color: white;
         }
 
         .navbar ul {
@@ -58,15 +105,6 @@
         .navbar ul li a:hover {
             color: #ff6347;
         }
-
-
-        .hero {
-            width: 100%;
-            height: 400px;
-            background: url('https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_1280.jpg') no-repeat center/cover;
-            position: relative;
-        }
-
         .photo-gallery {
             display: flex;
             justify-content: center;
@@ -109,7 +147,6 @@
             border-radius: 0 0 10px 10px;
         }
 
-   
         .popup {
             display: none;
             position: fixed;
@@ -263,6 +300,13 @@
     <header>
         <div class="hero">
             <nav class="navbar">
+                <div class="profile" id="profile-btn">
+                    <div class="avatar"></div>
+                    <div class="profile-menu" id="profile-menu">
+                        <a href="Profile.html">Check Profile</a>
+                        <a href="login.html">Logout</a>
+                    </div>
+                </div>
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="index.html">Materi</a></li>
@@ -364,7 +408,11 @@
         </div>
     </footer>
     <script>
-    function openPopup(imageUrl, description) {
+        document.getElementById("profile-btn").addEventListener("click", function() {
+            document.getElementById("profile-menu").classList.toggle("active");
+        });
+
+        function openPopup(imageUrl, description) {
                 document.getElementById('popup-img').src = imageUrl;
                 document.getElementById('popup-text').innerText = description;
                 document.getElementById('popup').style.display = 'flex';
@@ -374,7 +422,8 @@
                 if (event.target.id === 'popup' || event.target.classList.contains('popup-close')) {
                     document.getElementById('popup').style.display = 'none';
                 }
-            }       
+            }     
     </script>
+    
 </body>
 </html>
